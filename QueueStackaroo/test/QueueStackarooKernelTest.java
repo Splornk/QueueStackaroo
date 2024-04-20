@@ -18,6 +18,67 @@ public class QueueStackarooKernelTest {
     }
 
     /**
+     * Testing newInstance.
+     */
+    @Test
+    public void newInstanceTest() {
+        QueueStackaroo<Integer> q = new QueueStackaroo1<Integer>();
+        QueueStackaroo<Integer> qCopy = new QueueStackaroo1<Integer>();
+        QueueStackaroo<Integer> instance = q.newInstance();
+        assertEquals(q, instance);
+        assertEquals(qCopy, q);
+    }
+
+    /**
+     * Testing clear when empty.
+     */
+    @Test
+    public void emptyClearTest() {
+        QueueStackaroo<Integer> q = new QueueStackaroo1<Integer>();
+        QueueStackaroo<Integer> qCopy = new QueueStackaroo1<Integer>();
+        q.clear();
+        assertEquals(qCopy, q);
+    }
+
+    /**
+     * Testing clear when non-empty.
+     */
+    @Test
+    public void nonEmptyClearTest() {
+        QueueStackaroo<Integer> q = new QueueStackaroo1<Integer>();
+        QueueStackaroo<Integer> qCopy = new QueueStackaroo1<Integer>();
+        q.add(1);
+        q.clear();
+        assertEquals(qCopy, q);
+    }
+
+    /**
+     * Testing transferFrom when empty.
+     */
+    @Test
+    public void emptyTransferFromTest() {
+        QueueStackaroo<Integer> q = new QueueStackaroo1<Integer>();
+        QueueStackaroo<Integer> q1 = new QueueStackaroo1<Integer>();
+        QueueStackaroo<Integer> qCopy = new QueueStackaroo1<Integer>();
+        q.transferFrom(q1);
+        assertEquals(qCopy, q);
+    }
+
+    /**
+     * Testing transferFrom when non-empty.
+     */
+    @Test
+    public void nonEmptyTransferFromTest() {
+        QueueStackaroo<Integer> q = new QueueStackaroo1<Integer>();
+        QueueStackaroo<Integer> q1 = new QueueStackaroo1<Integer>();
+        QueueStackaroo<Integer> qCopy = new QueueStackaroo1<Integer>();
+        q1.add(1);
+        qCopy.add(1);
+        q.transferFrom(q1);
+        assertEquals(qCopy, q);
+    }
+
+    /**
      * Testing add in queue mode.
      */
     @Test
