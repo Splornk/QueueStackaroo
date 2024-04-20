@@ -1,4 +1,4 @@
-# Portfolio Project
+# QueueStackaroo
 
 The purpose of this project was just to get my foot in the door and create a goofy (shitpost) project 
 with the skills that I have learned. This component mixes both queues and stacks into one data structure
