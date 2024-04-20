@@ -81,6 +81,7 @@ public interface QueueStackaroo<T> extends QueueStackarooKernel<T> {
      * data is lost.
      *
      * @updates this
+     * @requires this /= <>
      * @ensures <pre>
      * this.queue_mode = !this.queue_mode but
      * 1/3 chance this.length = |{}|
