@@ -187,6 +187,12 @@ public abstract class QueueStackarooSecondary<T> implements QueueStackaroo<T> {
          * Gets initial mode
          */
         boolean mode = this.isInQueueMode();
+        /*
+         * Switches modes
+         */
+        while (this.isInQueueMode() == mode) {
+            this.front();
+        }
 
         /*
          * Finds out if all data is lost
@@ -195,12 +201,6 @@ public abstract class QueueStackarooSecondary<T> implements QueueStackaroo<T> {
             while (this.length() != 0) {
                 this.remove();
             }
-        }
-        /*
-         * Switches modes if it has not already
-         */
-        while (this.isInQueueMode() == mode) {
-            this.front();
         }
     }
 }
